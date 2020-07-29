@@ -311,6 +311,7 @@ const ModalizeBase = (
     const toValue =
       toInitialAlwaysOpen && alwaysOpen ? (modalHeightValue || 0) - alwaysOpen : screenHeight;
 
+    BackHandler.removeEventListener('hardwareBackPress', handleBackPress);
     backButtonListenerRef.current?.remove();
 
     cancelTranslateY.setValue(1);
